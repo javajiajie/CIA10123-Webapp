@@ -35,14 +35,14 @@ public class ProductJDBCDAO implements ProductDAO_interface {
 			con = DriverManager.getConnection(url, userid, passwd);
 			pstmt = con.prepareStatement(INSERT_STMT);
 
-			pstmt.setInt(1, productVO.getProduct_id());
-			pstmt.setInt(2, productVO.getCategory_id());
+			pstmt.setInt(1, productVO.getProductId());
+			pstmt.setInt(2, productVO.getCategoryId());
 			pstmt.setString(3, productVO.getName());
 			pstmt.setString(4, productVO.getDescription());
 			pstmt.setInt(5, productVO.getPrice());
 			pstmt.setInt(6, productVO.getQuantity());
-			pstmt.setByte(7, productVO.getReview_status());
-			pstmt.setByte(8, productVO.getProduct_status());
+			pstmt.setByte(7, productVO.getReviewStatus());
+			pstmt.setByte(8, productVO.getProductStatus());
 
 			pstmt.executeUpdate();
 
@@ -85,14 +85,14 @@ public class ProductJDBCDAO implements ProductDAO_interface {
 			con = DriverManager.getConnection(url, userid, passwd);
 			pstmt = con.prepareStatement(UPDATE);
 
-			pstmt.setInt(1, productVO.getProduct_id());
-			pstmt.setInt(2, productVO.getCategory_id());
+			pstmt.setInt(1, productVO.getProductId());
+			pstmt.setInt(2, productVO.getCategoryId());
 			pstmt.setString(3, productVO.getName());
 			pstmt.setString(4, productVO.getDescription());
 			pstmt.setInt(5, productVO.getPrice());
 			pstmt.setInt(6, productVO.getQuantity());
-			pstmt.setByte(7, productVO.getReview_status());
-			pstmt.setByte(8, productVO.getProduct_status());
+			pstmt.setByte(7, productVO.getReviewStatus());
+			pstmt.setByte(8, productVO.getProductStatus());
 
 			pstmt.executeUpdate();
 
@@ -152,15 +152,15 @@ public class ProductJDBCDAO implements ProductDAO_interface {
 			while (rs.next()) {
 				// empVo �]�٬� Domain objects
 				productVO = new ProductVO();
-				productVO.setProduct_id(rs.getInt("product_id"));
-				productVO.setSeller_id(rs.getInt("seller_id"));
-				productVO.setCategory_id(rs.getInt("category_id"));
+				productVO.setProductId(rs.getInt("product_id"));
+				productVO.setSellerId(rs.getInt("seller_id"));
+				productVO.setCategoryId(rs.getInt("category_id"));
 				productVO.setName(rs.getString("name"));
 				productVO.setDescription(rs.getString("description"));
 				productVO.setPrice(rs.getInt("price"));
 				productVO.setQuantity(rs.getInt("quantity"));
-				productVO.setReview_status(rs.getByte("review_status"));
-				productVO.setProduct_status(rs.getByte("product_status"));
+				productVO.setReviewStatus(rs.getByte("review_status"));
+				productVO.setProductStatus(rs.getByte("product_status"));
 			}
 
 			// Handle any driver errors
@@ -218,15 +218,15 @@ public class ProductJDBCDAO implements ProductDAO_interface {
 			while (rs.next()) {
 				// empVO �]�٬� Domain objects
 				productVO = new ProductVO();
-				productVO.setProduct_id(rs.getInt("product_id"));
-				productVO.setSeller_id(rs.getInt("seller_id"));
-				productVO.setCategory_id(rs.getInt("category_id"));
+				productVO.setProductId(rs.getInt("product_id"));
+				productVO.setSellerId(rs.getInt("seller_id"));
+				productVO.setCategoryId(rs.getInt("category_id"));
 				productVO.setName(rs.getString("name"));
 				productVO.setDescription(rs.getString("description"));
 				productVO.setPrice(rs.getInt("price"));
 				productVO.setQuantity(rs.getInt("quantity"));
-				productVO.setReview_status(rs.getByte("review_status"));
-				productVO.setProduct_status(rs.getByte("product_status"));
+				productVO.setReviewStatus(rs.getByte("review_status"));
+				productVO.setProductStatus(rs.getByte("product_status"));
 				list.add(productVO); // Store the row in the list
 			}
 
