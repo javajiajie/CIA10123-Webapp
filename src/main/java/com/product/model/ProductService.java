@@ -44,7 +44,7 @@ public class ProductService {
 	        productVO.setQuantity(quantity);
 	        productVO.setReviewStatus(reviewStatus);
 	        productVO.setProductStatus(productStatus);
-	        dao.insert(productVO);
+	        dao.update(productVO);
 			return productVO;
 		}
 		

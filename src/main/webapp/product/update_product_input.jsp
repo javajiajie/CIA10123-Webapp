@@ -133,12 +133,19 @@ th, td {
 			</tr>
 			<tr>
 				<td>上架編號:<font color=red><b>*</b></font></td>
-				<td><select size="1" name="productStatus">
-						<c:forEach var="productVO" items="${productSev.all}">
-							<option value="${productVO.productStatus}"
-								${(productVO.productStatus==productVO.productStatus)? 'selected':'' }>${productVO.productStatus}
-						</c:forEach>
-				</select></td>
+				<td>
+<!-- 					<select size="1" name="productStatus"> -->
+<%-- 						<c:forEach var="productVO" items="${productSev.all}"> --%>
+<%-- 							<option value="${productVO.productStatus}" --%>
+<%-- 								${(productVO.productStatus==productVO.productStatus)? 'selected':'' }>${productVO.productStatus} --%>
+<%-- 						</c:forEach> --%>
+<!-- 					</select> -->
+					<input type="radio" id="option0" name="productStatus" value="0" <c:if test="${param.productStatus eq '0'}">checked</c:if>>
+					<label for="option0">下架</label>
+					
+					<input type="radio" id="option1" name="productStatus" value="1" <c:if test="${param.productStatus eq '1'}">checked</c:if>>
+					<label for="option1">上架</label>
+				</td>
 			</tr>
 
 		</table>

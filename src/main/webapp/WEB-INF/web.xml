@@ -11,4 +11,26 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
+	<servlet>
+		<servlet-name>ProductImgServlet</servlet-name>
+		<servlet-class>com.product.servlet.ProductImgServlet</servlet-class>
+	</servlet>
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>ProductImgServlet</servlet-name> -->
+<!-- 		<url-pattern>/product/productImg.do</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+	
+	<listener>
+		<listener-class>com.product.listener.InitializerListener</listener-class>
+	</listener>
+	
+	<filter>
+        <filter-name>SessionInViewFilter</filter-name>
+        <filter-class>com.product.filter.OpenSessionInViewFilter</filter-class>
+    </filter>
+<!--     <filter-mapping> -->
+<!--         <filter-name>SessionInViewFilter</filter-name> -->
+<!--         <url-pattern>/*</url-pattern> -->
+<!--     </filter-mapping> -->
+	
 </web-app>

@@ -132,12 +132,19 @@ th, td {
 			</tr>
 			<tr>
 				<td>¤W¬[½s¸¹:<font color=red><b>*</b></font></td>
-				<td><select size="1" name="productStatus">
-						<c:forEach var="productVO" items="${productSev.all}">
-							<option value="${productVO.productStatus}"
-								${(productVO.productStatus==productVO.productStatus)? 'selected':'' }>${productVO.productStatus}
-						</c:forEach>
-				</select></td>
+				<td>
+<!-- 				<select size="1" name="productStatus"> -->
+<%-- 						<c:forEach var="productVO" items="${productSev.all}"> --%>
+<%-- 							<option value="${productVO.productStatus}" --%>
+<%-- 								${(productVO.productStatus==productVO.productStatus)? 'selected':'' }>${productVO.productStatus} --%>
+<%-- 						</c:forEach> --%>
+<!-- 				</select> -->
+				<select name="productStatus">
+				    <option value="0" <c:if test="${param.productStatus eq '0'}">selected</c:if>>0</option>
+				    <option value="1" <c:if test="${param.productStatus eq '1'}">selected</c:if>>1</option>
+				</select>
+
+				</td>
 			</tr>
 
 		</table>
